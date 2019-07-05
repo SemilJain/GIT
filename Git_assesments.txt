@@ -1,0 +1,79 @@
+Problem 1
+
+$ git init
+$ git add *
+$ git status
+$ git config --global user.name "Semil Jain"
+$ git config --global user.email "jainsemilv@gmail.com"
+$ git commit -m "Assesment Prob 1"
+$ git remote add origin https://github.com/SemilJain/Sample_GIT.git
+$ git push -u origin master
+
+
+Problem 2
+#Made changes in 2 files
+
+$ git add *
+$ git status
+$ git commit -m "Problem 2"
+$ git push
+
+Problem 3
+
+$ git log --name-status -1
+
+Problem 4
+
+$ git rm --cached Problem4.txt
+$ git commit -m "Removed Accidental File"
+$ git push
+
+Problem 5
+
+$ git revert 78e10b7
+$ git push
+
+#78e10b7 is the latest commit hash number
+#Then enter username and password prompted
+
+Problem 6
+
+$ git checkout -b merge_branch
+$ echo "Sample text for merge conflict resolve" > merge.txt
+$ git add *
+$ git commit -m "edited merge.txt"
+$ git checkout master
+$ echo "Content to append for conflict testing" >> merge.txt
+$ git add *
+$ git commit -m "appended content to merge.txt"
+$ git merge merge_branch    #Merge will fail as conflict ..so resloving it
+$ git status
+# Made changes to file resolving conflict
+$ git add *
+$ git commit -m "resolved conflict"
+$ git push
+
+Problem 7
+
+$ git branch
+$ git checkout -b prod
+$ touch textc.txt textd.txt texte.txt textf.txt
+$ git add textc.txt
+$ git commit -m "textc.txt created"
+$ git add textd.txt
+$ git commit -m "textd.txt created"
+$ git add texte.txt
+$ git commit -m "texte.txt created"
+$ git add textf.txt
+$ git commit -m "textf.txt created"
+$ git checkout master
+$ git checkout -b test
+$ touch textg.txt texth.txt texti.txt
+$ git add textg.txt
+$ git commit -m "textg.txt created"
+$ git add texth.txt
+$ git commit -m "texth.txt created"
+$ git add texti.txt
+$ git commit -m "texti.txt created"
+$ git cherry-pick 379ef4c             #379ef4c is the hash code when texte was created
+$ git log --oneline
